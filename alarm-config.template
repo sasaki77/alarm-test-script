@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config name="Accelerator">
+  <component name="TEST">
+{%- for i in range(total) -%}
+{%- set no = '%05d' | format(i|int) %}
+    <pv name="Alarm{{ no }}">
+      <description>Test {{ no }}</description>
+      <annunciating>true</annunciating>
+    </pv>
+{%- endfor %}
+  </component>
+</config>

@@ -1,0 +1,19 @@
+{%- for i in range(total) -%}
+{%- set group = i//n -%}
+{%- set no = '%05d' | format(i|int) -%}
+record(calc,"Ramp{{ no }}") {
+    field(INPA,"Ramp{{ no }}")
+    field(CALC,"A<{{ total }}?A+1:0")
+    field(SCAN,"{{ rate }}")
+    field(HOPR,"{{ total }}")
+    field(FLNK,"Alarm{{ no }}")
+}
+
+record(calc,"Alarm{{ no }}") {
+    field(INPA,"Ramp{{ no }}")
+    field(CALC,"A>={{ n*group }}&&A<={{ n*(group+1) }}")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+{% endfor -%}
