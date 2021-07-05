@@ -1,3 +1,4 @@
+import pathlib
 import argparse
 
 from jinja2 import Environment, FileSystemLoader
@@ -24,27 +25,44 @@ def parseArgs():
 
     return parser.parse_args()
 
+def checkdir(path):
+    parent = path.parent
+    if not parent.exists():
+        parent.mkdir()
+
+def generate(total, group, rate, count, dbpath, confpath):
+    dpath = pathlib.Path(dbpath)
+    cpath = pathlib.Path(confpath)
+
+    checkdir(dpath)
+    checkdir(cpath)
+
+    env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
+    tmpl_db = env.get_template('db.template')
+    
+    db = tmpl_db.render(total=total, group=group, rate=rate, count=count)
+    
+    with open(dpath, 'w') as f:
+        f.write(db)
+    
+    tmpl_config = env.get_template('alarm-config.template')
+    
+    config = tmpl_config.render(total=total)
+    
+    with open(cpath, 'w') as f:
+        f.write(config)
+
 def main():
     args = parseArgs()
 
     total = args.total
     n = args.number
     rate = args.rate
+    dbpath = args.out
+    confpath = args.xml
+
+    generate(total, n, rate, 100, dbpath, confpath)
     
-    env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
-    tmpl_db = env.get_template('db.template')
-    
-    db = tmpl_db.render(total=total, n=n, rate=rate)
-    
-    with open(args.out, 'w') as f:
-        f.write(db)
-    
-    tmpl_config = env.get_template('alarm-config.template')
-    
-    config = tmpl_config.render(total=total, n=n)
-    
-    with open(args.xml, 'w') as f:
-        f.write(config)
 
 if __name__ == '__main__':
     main()

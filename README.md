@@ -23,3 +23,9 @@ optional arguments:
 
 ## Demo files
 Demo directory has default output files.
+
+## Test
+```bash
+pip install pytest
+pytest test.py
+```
