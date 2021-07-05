@@ -1,13 +1,28 @@
+{%- set ni = total//area -%}
+{%- set nj = total//area//sgroup -%}
+{%- set nk = total//area//sgroup//ssgroup -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <config name="Accelerator">
-  <component name="TEST">
-{%- for i in range(total) -%}
-{%- set no = '%05d' | format(i|int) %}
-    <pv name="Alarm{{ no }}">
-      <description>Test {{ no }}</description>
-      <annunciating>true</annunciating>
-    </pv>
+{%- for i in range(area) %}
+  <component name="Area{{i}}">
+{%- for j in range(sgroup) %}
+    <component name="Sub{{j}}">
+{%- for k in range(ssgroup) %}
+      <component name="SubSub{{k}}">
+{%- for l in range(nk) -%}
+{%- set no = '%05d' | format(ni*i+nj*j+nk*k+l|int) %}
+        <pv name="Alarm{{ no }}">
+          <description>Alarm{{ no }}</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+{%- endfor %}
+      </component>
+{%- endfor %}
+    </component>
 {%- endfor %}
   </component>
+{%- endfor %}
 </config>
 

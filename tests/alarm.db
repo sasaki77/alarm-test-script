@@ -7,7 +7,7 @@ record(calc,"Ramp00000") {
 
 record(calc,"Alarm00000") {
     field(INPA,"Ramp00000")
-    field(CALC,"A>=0&&A<=50")
+    field(CALC,"A>=0&&A<=25")
     field(HIGH,"1")
     field(HSV,"MINOR")
 }
@@ -21,7 +21,203 @@ record(calc,"Ramp00001") {
 
 record(calc,"Alarm00001") {
     field(INPA,"Ramp00001")
-    field(CALC,"A>=50&&A<=100")
+    field(CALC,"A>=0&&A<=25")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00002") {
+    field(INPA,"Ramp00002")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00002")
+}
+
+record(calc,"Alarm00002") {
+    field(INPA,"Ramp00002")
+    field(CALC,"A>=0&&A<=25")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00003") {
+    field(INPA,"Ramp00003")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00003")
+}
+
+record(calc,"Alarm00003") {
+    field(INPA,"Ramp00003")
+    field(CALC,"A>=0&&A<=25")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00004") {
+    field(INPA,"Ramp00004")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00004")
+}
+
+record(calc,"Alarm00004") {
+    field(INPA,"Ramp00004")
+    field(CALC,"A>=25&&A<=50")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00005") {
+    field(INPA,"Ramp00005")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00005")
+}
+
+record(calc,"Alarm00005") {
+    field(INPA,"Ramp00005")
+    field(CALC,"A>=25&&A<=50")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00006") {
+    field(INPA,"Ramp00006")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00006")
+}
+
+record(calc,"Alarm00006") {
+    field(INPA,"Ramp00006")
+    field(CALC,"A>=25&&A<=50")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00007") {
+    field(INPA,"Ramp00007")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00007")
+}
+
+record(calc,"Alarm00007") {
+    field(INPA,"Ramp00007")
+    field(CALC,"A>=25&&A<=50")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00008") {
+    field(INPA,"Ramp00008")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00008")
+}
+
+record(calc,"Alarm00008") {
+    field(INPA,"Ramp00008")
+    field(CALC,"A>=50&&A<=75")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00009") {
+    field(INPA,"Ramp00009")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00009")
+}
+
+record(calc,"Alarm00009") {
+    field(INPA,"Ramp00009")
+    field(CALC,"A>=50&&A<=75")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00010") {
+    field(INPA,"Ramp00010")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00010")
+}
+
+record(calc,"Alarm00010") {
+    field(INPA,"Ramp00010")
+    field(CALC,"A>=50&&A<=75")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00011") {
+    field(INPA,"Ramp00011")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00011")
+}
+
+record(calc,"Alarm00011") {
+    field(INPA,"Ramp00011")
+    field(CALC,"A>=50&&A<=75")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00012") {
+    field(INPA,"Ramp00012")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00012")
+}
+
+record(calc,"Alarm00012") {
+    field(INPA,"Ramp00012")
+    field(CALC,"A>=75&&A<=100")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00013") {
+    field(INPA,"Ramp00013")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00013")
+}
+
+record(calc,"Alarm00013") {
+    field(INPA,"Ramp00013")
+    field(CALC,"A>=75&&A<=100")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00014") {
+    field(INPA,"Ramp00014")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00014")
+}
+
+record(calc,"Alarm00014") {
+    field(INPA,"Ramp00014")
+    field(CALC,"A>=75&&A<=100")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00015") {
+    field(INPA,"Ramp00015")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00015")
+}
+
+record(calc,"Alarm00015") {
+    field(INPA,"Ramp00015")
+    field(CALC,"A>=75&&A<=100")
     field(HIGH,"1")
     field(HSV,"MINOR")
 }
