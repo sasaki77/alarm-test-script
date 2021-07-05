@@ -14,7 +14,9 @@
         <pv name="Alarm{{ no }}">
           <description>Alarm{{ no }}</description>
           <enabled>true</enabled>
+{%- if latch %}
           <latching>true</latching>
+{%- endif %}
           <annunciating>true</annunciating>
         </pv>
 {%- endfor %}

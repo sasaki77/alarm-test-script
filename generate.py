@@ -26,6 +26,8 @@ def parseArgs():
     parser.add_argument('-c', '-count', dest='count',
                         default=50000, help='Number of Count for Ramp Record',
                         metavar=50000, type=int)
+    parser.add_argument('-l', '-latch', dest='latch',
+                        help='Disable latching', action='store_false')
     parser.add_argument('-o', '-out', dest='out',
                         default='./alarm.db', help='Output Path for DB',
                         metavar='./alarm.db')
@@ -42,7 +44,7 @@ def checkdir(path):
     if not parent.exists():
         parent.mkdir()
 
-def generate(total, area, sgroup, ssgroup, agroup, rate, count, dbpath, confpath):
+def generate(total, area, sgroup, ssgroup, agroup, rate, count, dbpath, confpath, latch=True):
     dpath = pathlib.Path(dbpath)
     cpath = pathlib.Path(confpath)
 
@@ -59,7 +61,7 @@ def generate(total, area, sgroup, ssgroup, agroup, rate, count, dbpath, confpath
     
     tmpl_config = env.get_template('alarm-config.template')
     
-    config = tmpl_config.render(total=total, area=area, sgroup=sgroup, ssgroup=ssgroup)
+    config = tmpl_config.render(total=total, area=area, sgroup=sgroup, ssgroup=ssgroup, latch=latch)
     
     with open(cpath, 'w') as f:
         f.write(config)
@@ -73,11 +75,12 @@ def main():
     ssgroup = args.ssgroup
     dbgroup = args.dbgroup
     rate = args.rate
-    dbpath = args.out
     count = args.count
+    latch = args.latch
+    dbpath = args.out
     confpath = args.xml
 
-    generate(total, area, sgroup, ssgroup, dbgroup, rate, count, dbpath, confpath)
+    generate(total, area, sgroup, ssgroup, dbgroup, rate, count, dbpath, confpath, latch)
     
 
 if __name__ == '__main__':
