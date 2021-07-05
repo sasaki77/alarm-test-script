@@ -1,0 +1,28 @@
+record(calc,"Ramp00000") {
+    field(INPA,"Ramp00000")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00000")
+}
+
+record(calc,"Alarm00000") {
+    field(INPA,"Ramp00000")
+    field(CALC,"A>=0&&A<=50")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+
+record(calc,"Ramp00001") {
+    field(INPA,"Ramp00001")
+    field(CALC,"A<100?A+1:0")
+    field(SCAN,".2 second")
+    field(FLNK,"Alarm00001")
+}
+
+record(calc,"Alarm00001") {
+    field(INPA,"Ramp00001")
+    field(CALC,"A>=50&&A<=100")
+    field(HIGH,"1")
+    field(HSV,"MINOR")
+}
+

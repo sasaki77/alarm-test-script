@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config name="Accelerator">
+  <component name="TEST">
+    <pv name="Alarm00000">
+      <description>Test 00000</description>
+      <annunciating>true</annunciating>
+    </pv>
+    <pv name="Alarm00001">
+      <description>Test 00001</description>
+      <annunciating>true</annunciating>
+    </pv>
+  </component>
+</config>
