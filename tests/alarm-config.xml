@@ -1,13 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config name="Accelerator">
-  <component name="TEST">
-    <pv name="Alarm00000">
-      <description>Test 00000</description>
-      <annunciating>true</annunciating>
-    </pv>
-    <pv name="Alarm00001">
-      <description>Test 00001</description>
-      <annunciating>true</annunciating>
-    </pv>
+  <component name="Area0">
+    <component name="Sub0">
+      <component name="SubSub0">
+        <pv name="Alarm00000">
+          <description>Alarm00000</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+        <pv name="Alarm00001">
+          <description>Alarm00001</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+      </component>
+      <component name="SubSub1">
+        <pv name="Alarm00002">
+          <description>Alarm00002</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+        <pv name="Alarm00003">
+          <description>Alarm00003</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+      </component>
+    </component>
+    <component name="Sub1">
+      <component name="SubSub0">
+        <pv name="Alarm00004">
+          <description>Alarm00004</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+        <pv name="Alarm00005">
+          <description>Alarm00005</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+      </component>
+      <component name="SubSub1">
+        <pv name="Alarm00006">
+          <description>Alarm00006</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+        <pv name="Alarm00007">
+          <description>Alarm00007</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+      </component>
+    </component>
+  </component>
+  <component name="Area1">
+    <component name="Sub0">
+      <component name="SubSub0">
+        <pv name="Alarm00008">
+          <description>Alarm00008</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+        <pv name="Alarm00009">
+          <description>Alarm00009</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+      </component>
+      <component name="SubSub1">
+        <pv name="Alarm00010">
+          <description>Alarm00010</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+        <pv name="Alarm00011">
+          <description>Alarm00011</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+      </component>
+    </component>
+    <component name="Sub1">
+      <component name="SubSub0">
+        <pv name="Alarm00012">
+          <description>Alarm00012</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+        <pv name="Alarm00013">
+          <description>Alarm00013</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+      </component>
+      <component name="SubSub1">
+        <pv name="Alarm00014">
+          <description>Alarm00014</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+        <pv name="Alarm00015">
+          <description>Alarm00015</description>
+          <enabled>true</enabled>
+          <latching>true</latching>
+          <annunciating>true</annunciating>
+        </pv>
+      </component>
+    </component>
   </component>
 </config>
